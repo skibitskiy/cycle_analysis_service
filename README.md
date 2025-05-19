@@ -12,7 +12,21 @@
    ```bash
    source venv/bin/activate
    ```
-3. Запустите сервер:
+3. Установите зависимости:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Убедитесь, что у вас запущен PostgreSQL и создана база данных (по умолчанию: cycle_analysis).
+   
+   Пример создания базы:
+   ```bash
+   createdb cycle_analysis
+   ```
+5. (Опционально) Установите переменную окружения DATABASE_URL, если хотите использовать другой адрес подключения:
+   ```bash
+   export DATABASE_URL=postgresql://user:password@localhost:5432/cycle_analysis
+   ```
+6. Запустите сервер:
    ```bash
    uvicorn main:app --reload
    ```
